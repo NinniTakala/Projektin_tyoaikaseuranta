@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Projekti</th>
+      <th>Valmis</th>
+    </tr>
+    {% for projekti in projektit %}
+    <tr>
+      <td>{{ projekti.name }}</td>
+      <td>{{ projekti.done }}</td>
+	  <td>
+	    <form method="POST" action="{{ url_for('aseta_valmiiksi', projekti_id=projekti.id) }}">
+	      <input type="submit" value="Projekti valmis"/>
+	    </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
