@@ -8,7 +8,14 @@ class Projekti(db.Model):
 
     name = db.Column(db.String(150), nullable=False)
     done = db.Column(db.Boolean, nullable=False)
+	
+    account_id = db.Column(db.Integer, db.ForeignKey('Kayttaja.id'),
+                           nullable=False)
 
     def __init__(self, name):
         self.name = name
         self.done = False
+		
+		
+from application import db
+  
