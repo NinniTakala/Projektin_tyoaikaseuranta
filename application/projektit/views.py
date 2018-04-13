@@ -41,7 +41,12 @@ def aloita_projekti():
     db.session().commit()
   
     return redirect(url_for("projektit_index"))
-	
+
+@app.route("/projektit/<projekti_id>/", methods=["POST"])
+@login_required
+def projektin_tiedot(projekti_id):
+    return render_template("tyotehtavat/projektin_tiedot.html")
+  
 	
 
 
