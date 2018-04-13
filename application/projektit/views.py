@@ -35,11 +35,26 @@ def aloita_projekti():
 
     t = Projekti(form.name.data)
     t.done = form.done.data
+	t.account_id = current_user.id
   
     db.session().add(t)
     db.session().commit()
   
     return redirect(url_for("projektit_index"))
+	
+	
+
+
+
+  
+
+  
+
+	
+	
+	
+	
+	
 
 	
 

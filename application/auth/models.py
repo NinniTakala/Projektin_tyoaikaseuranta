@@ -2,7 +2,7 @@ from application import db
 
 class User(db.Model):
 
-    __tablename__ = "Kayttaja"
+    __tablename__ = "kayttaja"
   
     id = db.Column(db.Integer, primary_key=True)
     date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
@@ -13,7 +13,7 @@ class User(db.Model):
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
 	
-    projektit = db.relationship("projekti", backref='Kayttaja', lazy=True)
+    projektit = db.relationship("Projekti", backref='kayttaja', lazy=True)
 
     def __init__(self, name, username, password):
         self.name = name
