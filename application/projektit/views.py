@@ -34,7 +34,7 @@ def aloita_projekti():
         return render_template("projektit/new.html", form = form)
 
     t = Projekti(form.name.data)
-    t.done = form.done.data
+    t.done = not form.done.data
     t.account_id = current_user.id
   
     db.session().add(t)

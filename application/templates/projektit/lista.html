@@ -9,7 +9,13 @@
     {% for projekti in projektit %}
     <tr>
       <td>{{ projekti.name }}</td>
-      <td>{{ projekti.done }}</td>
+	  {% if projekti.done %}
+      <p>
+	    <td>Projekti valmis</td>
+      </p>
+      {% else %}
+      <td>Projekti kesken</td>
+      {% endif %}
 	  <td>
 	    <form method="POST" action="{{ url_for('aseta_valmiiksi', projekti_id=projekti.id) }}">
 	      <input type="submit" value="Projekti valmis"/>
