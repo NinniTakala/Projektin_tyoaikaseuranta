@@ -23,7 +23,6 @@ def aseta_valmiiksi(projekti_id):
     db.session().commit()
   
     return redirect(url_for("projektit_index"))
-	
   
 @app.route("/projektit/", methods=["POST"])
 @login_required
@@ -42,12 +41,32 @@ def aloita_projekti():
   
     return redirect(url_for("projektit_index"))
 
-@app.route("/projektit/<projekti_id>/", methods=["POST"])
+@app.route("/projektit/tiedot/<projekti_id>/", methods=["POST"])
 @login_required
 def projektin_tiedot(projekti_id):
     return render_template("tyotehtavat/projektin_tiedot.html")
+    
+@app.route("/projektit/kesken/<projekti_id>/", methods=["POST"])
+@login_required
+def aseta_keskeneraiseksi(projekti_id):
+
+    t = Projekti.query.get(projekti_id)
+    t.done = False
+    db.session().commit()
   
-	
+    return redirect(url_for("projektit_index"))
+    
+@app.route("/projektit/poista/<projekti_id>/", methods=["POST"])
+@login_required
+def poista(projekti_id):
+
+    t = Projekti.query.get(projekti_id)
+    db.session.delete(t)
+    db.session().commit()
+  
+    return redirect(url_for("projektit_index"))
+  
+  
 
 
 

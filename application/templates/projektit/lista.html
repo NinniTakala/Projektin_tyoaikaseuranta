@@ -22,10 +22,20 @@
         </form>
       </td>
       <td>
+        <form method="POST" action="{{ url_for('aseta_keskeneraiseksi', projekti_id=projekti.id) }}">
+          <input type="submit" value="Projekti kesken"/>
+        </form>
+      </td>
+      <td>
         <form method="POST" action="{{ url_for('projektin_tiedot', projekti_id=projekti.id) }}">
           <input type="submit" value="Projektin tiedot"/>
         </form>
       </td>
+      <td>
+        <form method="POST" action="{{ url_for('poista', projekti_id=projekti.id) }}">
+          <input type="submit" value="Poista projekti"/>
+        </form>
+      </td>      
     </tr>
     {% endfor %}
   </table>
