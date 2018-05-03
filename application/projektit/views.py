@@ -33,7 +33,7 @@ def aloita_projekti():
         return render_template("projektit/new.html", form = form)
 
     t = Projekti(form.name.data)
-    t.done = not form.done.data
+    t.done = False
     t.account_id = current_user.id
   
     db.session().add(t)
@@ -44,7 +44,9 @@ def aloita_projekti():
 @app.route("/projektit/tiedot/<projekti_id>/", methods=["POST"])
 @login_required
 def projektin_tiedot(projekti_id):
-    return render_template("tyotehtavat/projektin_tiedot.html")
+    t = Projekti.query.get(projekti_id)
+    q = Projekti.query.filter(id == t)
+    return render_template("tyotehtavat/projektin_tiedot.html", tiedot = q)
     
 @app.route("/projektit/kesken/<projekti_id>/", methods=["POST"])
 @login_required

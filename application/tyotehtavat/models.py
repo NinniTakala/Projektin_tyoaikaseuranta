@@ -12,6 +12,6 @@ class Tyotehtava(Base):
                            nullable=False)
 	
 
-    def __init__(self, tehtava):
+    def __init__(self, tehtava, kuvaus):
         self.tehtava = tehtava
         self.kuvaus = kuvaus
