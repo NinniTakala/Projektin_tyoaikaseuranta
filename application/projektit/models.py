@@ -12,6 +12,7 @@ class Projekti(Base):
 						   
     tyotehtava = db.relationship("Tyotehtava", backref='projekti', lazy=True)
 
+    
     def __init__(self, name):
         self.name = name
         self.done = False

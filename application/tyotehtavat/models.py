@@ -7,11 +7,16 @@ class Tyotehtava(Base):
 
     tehtava = db.Column(db.String(150), nullable=False)
     kuvaus = db.Column(db.String(500), nullable=False)
+    tunnit = db.Column(db.Integer, nullable=False)
 	
     projekti_id = db.Column(db.Integer, db.ForeignKey('projekti.id'),
                            nullable=False)
+                           
+    account_id = db.Column(db.Integer, db.ForeignKey('kayttaja.id'),
+                           nullable=False)
 	
 
-    def __init__(self, tehtava, kuvaus):
+    def __init__(self, tehtava, kuvaus, tunnit):
         self.tehtava = tehtava
         self.kuvaus = kuvaus
+        self.tunnit = tunnit

@@ -18,15 +18,17 @@
         Et ole tällä hetkellä kirjautuneena. <a href="{{ url_for('kirjautuminen') }}">Kirjaudu sisään sivulle</a>
       </div>
       {% endif %}
-
-	  <div class="alert alert-secondary" role="alert">
-        <a href="{{ url_for('projektit_index') }}">Näytä projektit</a>
-      </div>
-	  <div class="alert alert-secondary" role="alert">
-        <a href="{{ url_for('projektit_form') }}">Aloita projekti</a>
-      </div>
 	  <div class="alert alert-secondary" role="alert">
         Eikö sinulla ole vielä käyttäjää? <a href="{{ url_for('lisaa_kayttaja') }}">Tee uusi käyttäjä</a>
+      </div>
+	  <div class="alert alert-secondary" role="alert">
+        <a href="{{ url_for('ohjeita') }}">Ohjeita sivuston käyttöön</a>
+      </div>      
+	  <div class="alert alert-secondary" role="alert">
+        <a href="{{ url_for('projektit_form') }}">Aloita projekti</a>
+      </div>      
+	  <div class="alert alert-secondary" role="alert">
+        <a href="{{ url_for('projektit_index') }}">Näytä omat projektit</a>
       </div>
 	  
       <main role="main" class="container">

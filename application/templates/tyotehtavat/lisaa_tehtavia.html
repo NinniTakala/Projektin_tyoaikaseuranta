@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+  {% block body %}
+  <form method="POST" action="{{ url_for('lisaatehtavia', projekti_id=projekti_id)}}">
+    <table>
+      <tr>
+	<td>
+	  {{ form.tehtava.label }}
+	</td>
+	<td>
+	  {{ form.tehtava }}
+	</td>
+	<td>
+	<td>
+	  {{ form.kuvaus.label }}
+	</td>
+	<td>
+	  {{ form.kuvaus }}
+	</td>
+	<td>
+	<td>
+	  {{ form.tunnit.label }}
+	</td>
+	<td>
+	  {{ form.tunnit }}
+	</td>
+      </tr>
+      <tr>
+      </tr>
+      <tr>
+	<td colspan="2">
+	  <input type="submit" value="Lisää työtehtävä"/>
+	</td>
+      </tr>
+  </form>
+  {% endblock %}
+  
+  
+  

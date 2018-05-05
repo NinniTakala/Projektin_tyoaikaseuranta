@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Tehtävä</th>
+      <th>Kuvaus</th>
+      <th>Tunnit</th>      
+    </tr>  
+    {% for tyotehtava in tyotehtavat %}
+    <tr>
+      <td>{{ tyotehtava.tehtava }}</td>
+      <td>{{ tyotehtava.kuvaus }}</td>
+      <td>{{ tyotehtava.tunnit }}</td>
+      <td>
+        <form method="POST" action="{{ url_for('muokkaa_tehtavaa', tyotehtava_id=tyotehtava.id) }}">
+          <input type="submit" value="Muokkaa tyotehtävää"/>
+        </form>
+      </td>       
+      <td>
+        <form method="POST" action="{{ url_for('poista_tehtava', tyotehtava_id=tyotehtava.id) }}">
+          <input type="submit" value="Poista tyotehtävä"/>
+        </form>
+      </td>      
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

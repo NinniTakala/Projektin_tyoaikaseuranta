@@ -10,6 +10,7 @@ class User(Base):
     password = db.Column(db.String(144), nullable=False)
 	
     projektit = db.relationship("Projekti", backref='kayttaja', lazy=True)
+    tyotehtavat = db.relationship("Tyotehtava", backref='kayttaja', lazy=True)    
 
     def __init__(self, name, username, password):
         self.name = name
