@@ -14,6 +14,13 @@ def projektit_index():
     else:
         return redirect(url_for("kirjautuminen"))      
         
+@app.route("/", methods=["GET", "POST"])
+def etusivu():
+    if current_user.is_authenticated:
+        return render_template("projektit/lista.html", projektit = Projekti.query.filter(Projekti.account_id == current_user.id))
+    else:
+        return redirect(url_for("kirjautuminen"))    
+        
 
 @app.route("/projektit/new/")
 @login_required
