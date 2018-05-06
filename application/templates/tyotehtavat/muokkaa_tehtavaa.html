@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+  {% block body %}
+  <form method="POST" action="{{ url_for('muokkaa_tehtavaa', tyotehtava_id=tyotehtava_id)}}">
+    <table>
+      <tr>
+	<td>
+	  {{ form.tehtava.label }}
+	</td>
+	<td>
+	  {{ form.tehtava }}
+	</td>
+	<td>
+	<td>
+      </tr>
+      <tr>
+      </tr>
+      <tr>
+	<td colspan="2">
+	  <input type="submit" value="Lisää muokkaukset"/>
+	</td>
+      </tr>
+  </form>
+  {% endblock %}

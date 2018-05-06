@@ -14,12 +14,22 @@
       <td>{{ tyotehtava.tunnit }}</td>
       <td>
         <form method="POST" action="{{ url_for('muokkaa_tehtavaa', tyotehtava_id=tyotehtava.id) }}">
-          <input type="submit" value="Muokkaa tyotehtävää"/>
+          <input type="submit" value="Muokkaa tehtävää"/>
+        </form>
+      </td>   
+      <td>
+        <form method="POST" action="{{ url_for('muokkaa_kuvausta', tyotehtava_id=tyotehtava.id) }}">
+          <input type="submit" value="Muokkaa kuvausta"/>
+        </form>
+      </td> 
+      <td>
+        <form method="POST" action="{{ url_for('muokkaa_tunteja', tyotehtava_id=tyotehtava.id) }}">
+          <input type="submit" value="Muokkaa tunteja"/>
         </form>
       </td>       
       <td>
         <form method="POST" action="{{ url_for('poista_tehtava', tyotehtava_id=tyotehtava.id) }}">
-          <input type="submit" value="Poista tyotehtävä"/>
+          <input type="submit" value="Poista työtehtävä"/>
         </form>
       </td>      
     </tr>

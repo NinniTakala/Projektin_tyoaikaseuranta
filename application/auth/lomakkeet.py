@@ -25,3 +25,24 @@ class LisaaTehtavia(FlaskForm):
   
     class Meta:
         csrf = False
+
+class MuokkaaTehtavaa(FlaskForm):
+    tehtava = StringField("Tehty työ", [validators.Length(min=2, max=150)])
+    
+  
+    class Meta:
+        csrf = False
+
+class MuokkaaKuvausta(FlaskForm):
+    kuvaus = StringField("Työn kuvaus", [validators.Length(min=2, max=500)])
+    
+  
+    class Meta:
+        csrf = False
+        
+class MuokkaaTunteja(FlaskForm):
+    tunnit = IntegerField("Käytetyt työtunnit", [validators.DataRequired()])
+    
+  
+    class Meta:
+        csrf = False

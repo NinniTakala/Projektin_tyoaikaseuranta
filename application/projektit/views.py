@@ -63,9 +63,10 @@ def poista(projekti_id):
 
     t = Projekti.query.get(projekti_id)
     
-    tt = t.tyotehtavat 
-    for tyotehtava in tt:
-        db.session().delete(tyotehtava)
+    p = Tyotehtava.query.filter(Tyotehtava.projekti_id == projekti_id)
+    
+    for a in p:
+        db.session().delete(a)
     
     db.session().delete(t)
     db.session().commit()
@@ -75,8 +76,10 @@ def poista(projekti_id):
 @app.route('/ohjeita')
 def ohjeita():
     return render_template('ohjeita.html')
-  
-  
+
+    
+
+
 
 
 
