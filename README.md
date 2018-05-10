@@ -11,19 +11,29 @@ Sivuston hyödyntämiseen on oikeastaan kaksi tapaa. Ensimmäinen on, että jär
 Toinen tapa sovelluksen käyttämiseen on se, että käyttäjä käyttääkin sovellusta projektin suunnitteluvaiheessa apuna niin, että tekee ennakkoon aikataulun projektin toteutukselle. Tämä tarkoittaa sitä, että projektiin merkitään ennakkoon työtehtäviä, ja työtehtävälistaa käytetään sitten aikatauluna ja muistilistana, josta poistetaan tehdyt tehtävät sitä mukaa, kun ne valmistuvat. Projekti on valmis, kun kaikki sen osat on toteutettu ja projektin tehtävälista on tyhjä.
 
 
+
 Sovelluksen tietokantakaavion saa näkyviin kopioimalla linkin alapuolella olevan tekstin tekstikenttään osoitteessa
 https://yuml.me/diagram/scruffy/class/draw
 %2F%2F Cool Class Diagram, [Projekti|(pk)id:Integer;(fk)käyttäjä_id:Käyttäjä;nimi:String;valmis:Boolean]*-1[Käyttäjä|(pk)id:Integer;nimi:String;nimimerkki:String;salasana:String], [Työtehtävä|(pk)id:Integer;(fk)käyttäjä_id:Käyttäjä;(fk)projekti_id:Projekti;tehtävä:String;kuvaus:String;työtunnit:Integer]*-1[Projekti], [Työtehtävä]*-1[Käyttäjä]
 
 
+
 Sovelluksen ominaisuudet ja toiminnallisuudet listattuna:
 
 Sovellukseen voi tehdä uusia käyttäjiä.
+
 Käyttäjän tulee kirjautua sisään voidakseen käyttää sovellusta.
+
 Jokaisella käyttäjällä on pääsy vain omiin projekteihinsa.
+
 Sovelluksessa voi lisätä uusia projekteja.
+
 Projekteja voi merkitä valmiiksi tai keskeneräisiksi.
+
 Projekteihin voi lisätä työtehtäviä ja kaikkia työtehtävän tietoja voi muokata jälkikäteen.
+
 Työtehtäviä voi poistaa.
+
 Kaikki yhteen projektiin liittyvät työtehtävät ja niihin liittyvät tiedot saa näkyviin projektikohtaisesti.
+
 Projekteja voi poistaa, projektin poiston yhteydessä poistetaan myös kaikki siihen liittyvät työtehtävät.

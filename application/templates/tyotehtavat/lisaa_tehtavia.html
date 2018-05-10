@@ -3,6 +3,7 @@
   {% block body %}
   <form method="POST" action="{{ url_for('lisaatehtavia', projekti_id=projekti_id)}}">
     <table>
+    <td>{{ projekti.name }}</td>    
       <tr>
 	<td>
 	  {{ form.tehtava.label }}

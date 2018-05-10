@@ -2,6 +2,7 @@
 
 {% block body %}
   <table>
+    <td>{{ projekti.name }}</td>
     <tr>
       <th>Tehtävä</th>
       <th>Kuvaus</th>
@@ -13,22 +14,22 @@
       <td>{{ tyotehtava.kuvaus }}</td>
       <td>{{ tyotehtava.tunnit }}</td>
       <td>
-        <form method="POST" action="{{ url_for('muokkaa_tehtavaa', tyotehtava_id=tyotehtava.id) }}">
+        <form method="POST" action="{{ url_for('muokkaa_tehtavaa', tyotehtava_id=tyotehtava.id, projekti_id = projekti.id) }}">
           <input type="submit" value="Muokkaa tehtävää"/>
         </form>
       </td>   
       <td>
-        <form method="POST" action="{{ url_for('muokkaa_kuvausta', tyotehtava_id=tyotehtava.id) }}">
+        <form method="POST" action="{{ url_for('muokkaa_kuvausta', tyotehtava_id=tyotehtava.id, projekti_id = projekti.id) }}">
           <input type="submit" value="Muokkaa kuvausta"/>
         </form>
       </td> 
       <td>
-        <form method="POST" action="{{ url_for('muokkaa_tunteja', tyotehtava_id=tyotehtava.id) }}">
+        <form method="POST" action="{{ url_for('muokkaa_tunteja', tyotehtava_id=tyotehtava.id, projekti_id = projekti.id) }}">
           <input type="submit" value="Muokkaa tunteja"/>
         </form>
       </td>       
       <td>
-        <form method="POST" action="{{ url_for('poista_tehtava', tyotehtava_id=tyotehtava.id) }}">
+        <form method="POST" action="{{ url_for('poista_tehtava', tyotehtava_id=tyotehtava.id, projekti_id = projekti.id) }}">
           <input type="submit" value="Poista työtehtävä"/>
         </form>
       </td>      

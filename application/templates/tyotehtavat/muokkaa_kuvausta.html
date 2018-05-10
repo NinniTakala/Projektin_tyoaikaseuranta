@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
   {% block body %}
-  <form method="POST" action="{{ url_for('muokkaa_kuvausta', tyotehtava_id=tyotehtava_id)}}">
+  <form method="POST" action="{{ url_for('muokkaa_kuvausta', tyotehtava_id=tyotehtava_id, projekti_id=projekti_id)}}">
     <table>
       <tr>
 	<td>
