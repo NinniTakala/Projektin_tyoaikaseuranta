@@ -14,7 +14,7 @@ Toinen tapa sovelluksen käyttämiseen on se, että käyttäjä käyttääkin so
 
 Sovelluksen tietokantakaavion saa näkyviin kopioimalla linkin alapuolella olevan tekstin tekstikenttään osoitteessa
 https://yuml.me/diagram/scruffy/class/draw
-%2F%2F Cool Class Diagram, [Projekti|(pk)id:Integer;(fk)käyttäjä_id:Käyttäjä;nimi:String;valmis:Boolean]/*-1[Käyttäjä|(pk)id:Integer;nimi:String;nimimerkki:String;salasana:String], [Työtehtävä|(pk)id:Integer;(fk)käyttäjä_id:Käyttäjä;(fk)projekti_id:Projekti;tehtävä:String;kuvaus:String;työtunnit:Integer]/*-1[Projekti], [Työtehtävä]/*-1[Käyttäjä]
+%2F%2F Cool Class Diagram, [Projekti|(pk)id:Integer;(fk)käyttäjä_id:Käyttäjä;nimi:String;valmis:Boolean]monta-1[Käyttäjä|(pk)id:Integer;nimi:String;nimimerkki:String;salasana:String], [Työtehtävä|(pk)id:Integer;(fk)käyttäjä_id:Käyttäjä;(fk)projekti_id:Projekti;tehtävä:String;kuvaus:String;työtunnit:Integer]monta-1[Projekti], [Työtehtävä]monta-1[Käyttäjä]
 
 
 
